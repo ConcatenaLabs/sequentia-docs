@@ -1,0 +1,20 @@
+[book]
+title = "Sequentia testnet guide"
+description = "How to use the Sequentia testnet: wallets, the faucet, Sequentia Core, the explorer, Compages, staking pools and Emissio."
+language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
+create-missing = false
+
+[output.html]
+site-url = "/docs/"
+default-theme = "navy"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/ConcatenaLabs/sequentia-docs"
+git-repository-icon = "fab-github"
+no-section-label = true
+
+[output.html.search]
+enable = true
