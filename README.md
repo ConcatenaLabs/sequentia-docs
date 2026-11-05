@@ -24,6 +24,9 @@ To preview while editing, run the fetched binary's server and open the address i
 `build.sh` names the mdBook release and its SHA-256; change both together to move to
 another release.
 
+CI (`.github/workflows/checks.yml`) runs `./build.sh` on every pull request and on `main`, checks
+that every link between the book's pages and every `#fragment` resolves, and refuses an em dash.
+
 ## Publish
 
 The testnet box builds from its clone of this repository and serves `book/` at `/docs/`.
