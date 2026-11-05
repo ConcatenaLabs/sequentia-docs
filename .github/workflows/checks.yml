@@ -1,0 +1,31 @@
+# On every pull request and on main: the book builds with the pinned mdBook (`./build.sh`, as the
+# testnet server builds it), every link between its pages and every #fragment resolves, and no em
+# dash has crept into the text (CLAUDE.md's rule).
+#
+# Not checked here: links to other sites. They point at the live testnet's pages, and a check
+# that fails whenever a public page is slow would be read as noise.
+name: checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  book:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: no em dashes
+        run: |
+          if grep -rn '—' src/; then echo "CLAUDE.md: no em dashes"; exit 1; fi
+      - run: ./build.sh
+      - name: links between pages
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: true
+          args: >-
+            --offline --include-fragments --no-progress
+            --exclude-path book/404.html
+            'book/**/*.html'
