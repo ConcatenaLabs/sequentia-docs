@@ -11,7 +11,7 @@ This guide covers everything the site offers:
 | | What it is for |
 |---|---|
 | [The web wallet](web-wallet.md) | A wallet in your browser for bitcoin and every Sequentia asset. The quickest way in. |
-| [The faucet](faucet.md) | Free testnet coins: the Sequence token (tSEQ) and sample assets. |
+| [The faucet](faucet.md) | Free testnet coins: BTC on testnet4, the Sequence token (tSEQ) and sample assets. |
 | [Sequentia Core](sequentia-core.md) | The full node and desktop wallet, for Linux and Windows. |
 | [The explorer](explorer.md) | Every block, transaction and asset on the chain, and the Bitcoin testnet4 chain it anchors to. |
 | [Compages](compages.md) | Bring assets in from Ethereum (Sepolia) and Solana (devnet), or peg bitcoin as SBTC. |
